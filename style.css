@@ -1,0 +1,303 @@
+/*GERAIS*/
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  text-align: center;
+  transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+a { text-decoration: none; color: inherit; }
+
+/*HEADER*/
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* logo à esquerda, nav à direita */
+  padding: 10px 20px;
+  background-color: #2e7d32;
+  color: white;
+  position: relative; /* necessário para centralizar o h1 */
+}
+
+header img { height: 60px; }
+
+header h1 {
+  position: absolute; /* tira do fluxo flex */
+  left: 50%;          /* posiciona no meio do header */
+  transform: translateX(-50%); /* centraliza exatamente */
+  margin: 0;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+header nav {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+header nav a {
+  color: white;
+  margin-left: 8px;
+  font-weight: bold;
+  font-size: 16px;
+  transition: color 0.3s, transform 0.15s;
+  padding: 8px 10px;
+  border-radius: 6px;
+}
+
+header nav a:hover {
+  color: #c8e6c9;
+  transform: translateY(-2px);
+}
+
+#dark-mode-toggle {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 6px;
+  transition: transform 0.2s ease;
+}
+#dark-mode-toggle:hover { transform: scale(1.08); }
+
+/*MAIN*/
+main {
+  padding: 40px 20px;
+  min-height: calc(100vh - 120px);
+  box-sizing: border-box;
+  position: relative; /* para posicionar mockup */
+}
+
+/*BANNER CENTRALIZADO*/
+.inicio-centralizado { display: inline-block; }
+
+.banner { text-align: center; }
+
+.banner-logo { width: 290px; margin: 20px 0; cursor: pointer; }
+
+.inicio h2 {
+  font-size: 36px;
+  color: #2e7d32;
+  margin-bottom: 15px;
+}
+
+.inicio p {
+  font-size: 20px;
+  color: #575757;
+  margin-bottom: 20px;
+}
+
+.descricao { font-size: 18px; margin-bottom: 30px; }
+
+
+/*CARDS INTERATIVOS*/
+.cards { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 30px; }
+
+.card {
+  background: #e4e4e4;
+  border-radius: 12px;
+  padding: 20px;
+  width: 250px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+  transition: transform 0.35s, box-shadow 0.35s, opacity 0.5s;
+  cursor: pointer;
+  opacity: 1;
+}
+
+.card.hidden { opacity: 0; transform: translateY(30px); } /* estado inicial se usado */
+.card.show { opacity: 1; transform: translateY(0); }
+
+.card:hover { transform: translateY(-10px) scale(1.02); box-shadow: 0 12px 30px rgba(0,0,0,0.12); }
+
+.card h3 { margin-top: 10px; color: #2e7d32; }
+
+/*MOCKUP À DIREITA*/
+.mockup-direita { position: absolute; top: 80px; right: 40px; }
+.mockup { max-width:330px; width: 100%; border-radius: 20px; box-shadow: 0 8px 18px rgba(0,0,0,0.18); transition: transform 0.25s; cursor: pointer; }
+.mockup:hover { transform: scale(1.04); }
+
+/*CONTACT FORM*/
+.contact-section { text-align: center; padding: 60px 20px; }
+
+.contact-section h2 { margin-bottom: 15px; font-size: 32px; }
+.contact-section p { margin-bottom: 25px; font-size: 18px; color: #666; }
+
+.modern-form {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  transition: background 0.3s ease;
+}
+
+.form-group { position: relative; margin-bottom: 25px; }
+.form-group input, .form-group textarea {
+  width: 100%; padding: 12px; border: none; border-bottom: 2px solid #ccc; font-size: 16px; outline: none; transition: all 0.25s; background: transparent; resize: none;
+}
+.form-group label { position: absolute; top: 12px; left: 10px; color: #888; font-size: 16px; pointer-events: none; transition: all 0.25s ease; }
+.form-group input:focus, .form-group textarea:focus,
+.form-group input:valid, .form-group textarea:valid { border-bottom: 2px solid #4CAF50; }
+.form-group input:focus + label, .form-group input:valid + label,
+.form-group textarea:focus + label, .form-group textarea:valid + label { top: -8px; left: 5px; font-size: 13px; color: #4CAF50; }
+
+.btn-enviar { display: inline-block; width: 100%; background: #4CAF50; color: white; border: none; padding: 14px; font-size: 18px; border-radius: 8px; cursor: pointer; transition: all 0.25s ease; }
+.btn-enviar:hover { background: #45a049; transform: translateY(-3px); }
+
+#form-feedback { margin-top: 15px; font-size: 16px; font-weight: bold; }
+
+/*LIGHTBOX (imagem em grande)*/
+#imageModal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.85); justify-content: center; align-items: center; }
+#imageModal img { max-width: 90%; max-height: 85%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.6); }
+#closeModal { position: absolute; top: 22px; right: 36px; font-size: 42px; color: #fff; cursor: pointer; }
+
+/*DARK MODE*/
+body.dark-mode {
+  background-color: #121212;
+  color: #eaeaea;
+}
+body.dark-mode header { background-color: #0f3e1a; }
+body.dark-mode .card { background: #1d1d1d; color: #eaeaea; box-shadow: 0 6px 18px rgba(0,0,0,0.6); }
+body.dark-mode .modern-form { background: #121212; color: #eaeaea; box-shadow: 0 6px 18px rgba(0,0,0,0.6); }
+body.dark-mode .form-group input, body.dark-mode .form-group textarea { background: transparent; color: #eaeaea; border-bottom: 2px solid #333; }
+body.dark-mode .mockup { box-shadow: 0 10px 30px rgba(0,0,0,0.7); }
+
+/*RESPONSIVO: telemóveis*/
+@media screen and (max-width: 900px) {
+  .mockup-direita { display: none; }
+  .cards { flex-direction: column; align-items: center; }
+  header img { height: 48px; }
+  header h1 { font-size: 22px; }
+}
+
+footer {
+  background-color: #2e7d32; /* verde */
+  color: rgb(255, 255, 255);
+  font-size: 20px; /* pequeno */
+  text-align: center;
+  padding: 8px 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+}
+
+/*SECÇÃO SOBRE - EQUIPA*/
+.team-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.team-member {
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.team-member:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.team-photo {
+  width: 200px;        /* aumenta a foto */
+  height: 200px;       /* formato quadrado */
+  border-radius: 12px; /* cantos arredondados */
+  object-fit: contain; /* mostra a foto toda sem cortar */
+  background: #f0f0f0; /* fundo cinza caso a foto não ocupe tudo */
+  padding: 10px;       /* espaço interno para não colar nas bordas */
+  transition: transform 0.3s;
+}
+
+.team-photo:hover {
+  transform: scale(1.1);
+}
+
+.team-member h3 {
+  margin-top: 12px;
+  font-size: 20px; /* nome maior */
+  color: #2e7d32;
+  font-weight: bold;
+}
+
+/*MODAL PARA FOTOS*/
+.modal {
+  display: none; 
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+  display: block;
+  margin: 5% auto;
+  max-width: 80%;
+  max-height: 80%;
+  border-radius: 12px;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: 9white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/*BOTÃO DOWNLOAD APP*/
+
+.app-download{
+margin-top:40px;
+display:flex;
+justify-content:center;
+}
+
+.app-btn{
+display:flex;
+align-items:center;
+gap:12px;
+
+background:#2e7d32;
+color:white;
+
+padding:16px 32px;
+border-radius:12px;
+
+font-size:20px;
+font-weight:bold;
+
+transition:all 0.25s ease;
+
+box-shadow:0 6px 16px rgba(0,0,0,0.2);
+}
+
+.app-btn img{
+width:50px;
+height:50px;
+}
+
+.app-btn:hover{
+transform:translateY(-4px) scale(1.05);
+background:#1b5e20;
+box-shadow:0 10px 24px rgba(0,0,0,0.3);
+}
