@@ -120,7 +120,7 @@ main {
 
 /*MOCKUP À DIREITA*/
 .mockup-direita { position: absolute; top: 80px; right: 40px; }
-.mockup { max-width:330px; width: 100%; border-radius: 20px; box-shadow: 0 8px 18px rgba(0,0,0,0.18); transition: transform 0.25s; cursor: pointer; }
+.mockup { max-width:330px; width: 100%; border-radius: 20px; transition: transform 0.25s; cursor: pointer; }
 .mockup:hover { transform: scale(1.04); }
 
 /*CONTACT FORM*/
@@ -172,24 +172,32 @@ body.dark-mode .form-group input, body.dark-mode .form-group textarea { backgrou
 body.dark-mode .mockup { box-shadow: 0 10px 30px rgba(0,0,0,0.7); }
 
 /*RESPONSIVO: telemóveis*/
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1500px) {
   .mockup-direita { display: none; }
+}
+
+@media screen and (max-width: 900px) {
   .cards { flex-direction: column; align-items: center; }
   header img { height: 48px; }
-  header h1 { font-size: 22px; }
+  header h1 { display: none; }
 }
 
 footer {
-  background-color: #2e7d32; /* verde */
+  background-color: #b0b0b0;
   color: rgb(255, 255, 255);
   font-size: 20px; /* pequeno */
   text-align: center;
-  padding: 8px 0;
+  padding: 0;
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
   box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+}
+
+footer img {
+  height: 40px;
+  filter:drop-shadow(0px 0px 10px white)
 }
 
 /*SECÇÃO SOBRE - EQUIPA*/

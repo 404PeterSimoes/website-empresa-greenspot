@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Placeholder: substitui por fetch() para enviar a um serviço real
       if (feedback) {
-        feedback.textContent = 'Mensagem enviada com sucesso.✅';
+        feedback.textContent = '✅ Mensagem enviada com sucesso.';
         feedback.style.color = 'green';
         feedback.style.display = 'block';
       }
