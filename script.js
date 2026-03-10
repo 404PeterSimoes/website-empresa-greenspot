@@ -110,8 +110,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Placeholder: substitui por fetch() para enviar a um serviço real
       if (feedback) {
-        feedback.textContent = '✅ Mensagem enviada com sucesso.';
-        feedback.style.color = 'green';
+        feedback.textContent = `⚠️ Foi enviado um email de verificação para ${email}!`;
+        feedback.style.color = 'orange';
         feedback.style.display = 'block';
       }
       form.reset();
