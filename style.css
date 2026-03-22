@@ -7,7 +7,7 @@ body {
   background-color: #ffffff;
   color: #333;
   text-align: center;
-  transition: background-color 0.35s ease, color 0.35s ease;
+  transition: background-color 1s ease, color 1s ease;
 }
 
 a { text-decoration: none; color: inherit; }
@@ -170,6 +170,8 @@ body.dark-mode .card { background: #1d1d1d; color: #eaeaea; box-shadow: 0 6px 18
 body.dark-mode .modern-form { background: #121212; color: #eaeaea; box-shadow: 0 6px 18px rgba(0,0,0,0.6); }
 body.dark-mode .form-group input, body.dark-mode .form-group textarea { background: transparent; color: #eaeaea; border-bottom: 2px solid #333; }
 body.dark-mode .mockup { box-shadow: 0 10px 30px rgba(0,0,0,0.7); }
+body.dark-mode p {color: rgb(202, 202, 202)}
+body.dark-mode footer {background-color: rgb(81, 81, 81)}
 
 /*RESPONSIVO: telemóveis*/
 @media screen and (max-width: 1500px) {
@@ -193,6 +195,7 @@ footer {
   left: 0;
   width: 100%;
   box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+  transition: background-color 0.35s ease, color 0.35s ease;
 }
 
 footer img {
@@ -207,6 +210,7 @@ footer img {
   flex-wrap: wrap;
   gap: 30px;
   margin-top: 30px;
+  height: 100%;
 }
 
 .team-member {
