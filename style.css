@@ -85,7 +85,8 @@ main {
 .inicio h2 {
   font-size: 36px;
   color: #2e7d32;
-  margin-bottom: 15px;
+  margin-bottom: 35px;
+  margin-top: 15px;
 }
 
 .inicio p {
@@ -94,7 +95,7 @@ main {
   margin-bottom: 20px;
 }
 
-.descricao { font-size: 18px; margin-bottom: 30px; }
+.descricao { font-size: 18px; margin-bottom: 30px; font-style: italic; }
 
 
 /*CARDS INTERATIVOS*/
