@@ -8,6 +8,10 @@ body {
   color: #333;
   text-align: center;
   transition: background-color 1s ease, color 1s ease;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 a { text-decoration: none; color: inherit; }
@@ -70,9 +74,10 @@ header nav a:hover {
 /*MAIN*/
 main {
   padding: 40px 20px;
-  min-height: calc(100vh - 120px);
   box-sizing: border-box;
   position: relative; /* para posicionar mockup */
+
+  flex: 1;
 }
 
 /*BANNER CENTRALIZADO*/
@@ -93,6 +98,10 @@ main {
   font-size: 20px;
   color: #575757;
   margin-bottom: 20px;
+}
+
+.inicio {
+  padding-bottom: 0;
 }
 
 .descricao { font-size: 18px; margin-bottom: 30px; font-style: italic; }
@@ -125,10 +134,12 @@ main {
 .mockup:hover { transform: scale(1.04); }
 
 /*CONTACT FORM*/
-.contact-section { text-align: center; padding: 60px 20px; }
+.contact-section { text-align: center; }
 
 .contact-section h2 { margin-bottom: 15px; font-size: 32px; }
 .contact-section p { margin-bottom: 25px; font-size: 18px; color: #666; }
+
+.cinzento {color:#666; font-size: 14px;}
 
 .modern-form {
   max-width: 600px;
@@ -191,9 +202,6 @@ footer {
   font-size: 20px; /* pequeno */
   text-align: center;
   padding: 0;
-  position: fixed;
-  bottom: 0;
-  left: 0;
   width: 100%;
   box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
   transition: background-color 0.35s ease, color 0.35s ease;
@@ -218,6 +226,7 @@ footer img {
   text-align: center;
   transition: transform 0.3s, box-shadow 0.3s;
   cursor: pointer;
+  border-radius: 12px;
 }
 
 .team-member:hover {
